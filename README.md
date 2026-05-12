@@ -1,10 +1,10 @@
-# MediaLogger
+# SHARE Media Logger
 
 A tool for logging media hits to Salesforce, developed by SHARE Communications Manager Adam Burns (aka @torontocaper).
 
 ## Purpose
 
-This app is meant to be used internally by staff at SHARE, the Shareholder Association for Research and Education, to log news articles and other media hits that are relevant to the organization.
+This app is meant to be used internally by staff at [SHARE](https://share.ca), the Shareholder Association for Research and Education, to log news articles and other media hits that are relevant to the organization.
 
 Its current working form involves three separate components:
 
