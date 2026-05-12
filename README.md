@@ -10,14 +10,14 @@ In this case, clicking the **bookmarklet** when the user has a news article open
 
 ## User Guide
 
-> [!NOTE] Work-in-progress
+> [!NOTE]
 > This User Guide is a work-in-progress. For help using the app, please [contact Adam](mailto:aburns@share.ca) directly.
 
 ### Step 1: Add the bookmarklet to your browser
 
 The first step is to add the **bookmarklet** to your browser. You can do this in much the same way you add a (regular) **bookmark**. The difference is that, instead of entering a 'regular' URL (e.g. https://facebook.com) in the URL field, you want to paste in a line of code starting with `javascript:`.
 
-> [!TIP] How-to
+> [!TIP]
 > 
 > For a detailed guide on how to do this in different browsers (e.g. Chrome, Firefox, Safari), check out this article:
 > 
