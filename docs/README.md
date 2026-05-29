@@ -10,7 +10,7 @@ Its current working form involves three separate components:
 
 1. A **bookmarklet** — a piece of Javascript code that the user adds to their browser as a bookmark, then clicks to execute a particular action. In this case, the **bookmarklet** creates and pre-fills a simple web form with basic information from the article (Headline, Author, Outlet, Publication Date and URL).
 2. A **zap** — an automation created with [Zapier](https:zapier.com), an online platform for connecting different apps and websites. The **zap** takes in the information from the web form and sends it to Salesforce.
-![A screenshot of the 'zap' workflow, showing the steps from the form submission to creating a record in Salesforce](docs/26-05-12-screenshot-zap-v5.png)
+![A screenshot of the 'zap' workflow, showing the steps from the form submission to creating a record in Salesforce](26-05-12-screenshot-zap-v5.png)
 3. Finally, a **custom 'Media' object** in [SHARE's Salesforce database](https://share.lightning.force.com/lightning/page/home)[^1] that contains both the pre-filled information from the bookmarklet (Author, Outlet and Publication Date), and optionally additional relevant details such as topics, related organizations and whether SHARE was quoted directly.
 
 ## User Guide
@@ -40,7 +40,7 @@ Give your bookmarklet a descriptive, memorable name like `Add media hit to Sales
 
 When you come across an article you'd like to add to Salesforce, click the **bookmarklet**. The code you pasted earlier will then execute on the currently open page, causing a form to pop up with some pre-filled information.
 
-![A screenshot of a web form with fields for article title, author, publisher and date publsihed](26-05-12-screenshot-bookmarklet-form.png)
+![A screenshot of a web form with fields for article title, author, publisher and date published](26-05-12-screenshot-bookmarklet-form.png)
 
 Make sure that the pre-filled data in the form is accurate, and fill in any empty fields. 
 
