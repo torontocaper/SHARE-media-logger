@@ -40,7 +40,7 @@ Give your bookmarklet a descriptive, memorable name like `Add media hit to Sales
 
 When you come across an article you'd like to add to Salesforce, click the **bookmarklet**. The code you pasted earlier will then execute on the currently open page, causing a form to pop up with some pre-filled information.
 
-![A screenshot of a web form with fields for article title, author, publisher and date publsihed](docs/26-05-12-screenshot-bookmarklet-form.png)
+![A screenshot of a web form with fields for article title, author, publisher and date publsihed](26-05-12-screenshot-bookmarklet-form.png)
 
 Make sure that the pre-filled data in the form is accurate, and fill in any empty fields. 
 
