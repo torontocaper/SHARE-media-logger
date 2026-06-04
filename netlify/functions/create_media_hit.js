@@ -10,7 +10,7 @@ exports.handler = async function (event) {
       publication_date: formData.get("publication_date"),
     };
 
-    console.log("Received form data:", data);
+    console.log("Received new form data:", data);
 
     return {
       statusCode: 200,
