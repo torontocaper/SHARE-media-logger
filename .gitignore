@@ -2,3 +2,5 @@
 .env
 secrets/
 docs/local
+# Local Netlify folder
+.netlify
