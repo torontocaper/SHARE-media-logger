@@ -42,7 +42,6 @@ exports.handler = async function (event) {
   // netlify/popup_form.html
   const templatePath = path.join(
     process.cwd(),
-    "netlify",
     "popup_form.html"
   );
 
