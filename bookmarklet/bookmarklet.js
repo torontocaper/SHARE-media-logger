@@ -1,28 +1,36 @@
-// bookmarklet.js
+// This file runs inside whatever article page the user is reading. Its job is deliberately simple:
+// 1. Look for basic article information on the page. (Author, headline, publisher, date, URL)
+// 2. Put that information into URL parameters and send to a serverless function hosted on Netlify.
+// 3. The Netlify function will then open an HTML form pre-populated with the article information. The user can edit the details and submit it to Salesforce.
 
-// This file runs inside whatever article page the user is reading.
-//
-// Its job is deliberately simple:
-// 1. Look for basic article information on the page.
-// 2. Put that information into URL parameters.
-// 3. Open your Netlify function in a popup window.
+// ========================================
+// CONFIG
+// Change this before copying the bookmarklet.
+// Use "local" for Netlify Dev.
+// Use "dev" for deployed testing.
+// Use "prod" before sharing with real users.
+// ========================================
+console.log("Running bookmarklet script...");
 
-// Change this when you deploy.
-// For local testing with `netlify dev`, keep this as localhost.
-const NETLIFY_BASE_URL = "http://localhost:8888";
+const ENVIRONMENT = "local"; // Options: "local", "dev", "prod"
 
-// Netlify functions live at this path by default.
-const FUNCTION_URL = `${NETLIFY_BASE_URL}/.netlify/functions/create_popup_form`;
+const URLS = {
+  local: "http://localhost:8888/.netlify/functions/create_popup_form",
+  dev: "https://dev--share-media-logger.netlify.app/.netlify/functions/create_popup_form",
+  prod: "https://share-media-logger.netlify.app/.netlify/functions/create_popup_form"
+};
 
 
-// This helper looks for a <meta> tag and returns its "content" value.
-//
-// Example:
-// <meta property="og:title" content="My headline">
-//
-// getMeta('meta[property="og:title"]')
-// would return:
-// "My headline"
+// If the environment variable is set to something unexpected, alert the user and throw an error.
+if (!URLS[ENVIRONMENT]) {
+  alert(`Invalid environment: ${ENVIRONMENT}`);
+  throw new Error(`Invalid environment: ${ENVIRONMENT}`);
+}
+
+// Set function URL based on environment.
+const POPUP_URL = URLS[ENVIRONMENT];
+
+// This helper looks for a <meta> tag in the article html and returns its "content" value.
 function getMeta(selector) {
   const tag = document.querySelector(selector);
 
@@ -95,7 +103,7 @@ params.set("source_url", source_url.trim());
 
 
 // Build the full popup URL.
-const popupUrl = `${FUNCTION_URL}?${params.toString()}`;
+const popupUrl = `${POPUP_URL}?${params.toString()}`;
 
 
 // Open the popup form.
