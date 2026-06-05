@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Media Hit Created</title>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      margin: 0;
+      padding: 2rem;
+      background: #f6f7f8;
+      color: #222;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #235c4b;
+    }
+
+    .success-message {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    dl {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 0.5rem 1rem;
+      margin: 1.5rem 0;
+    }
+
+    dt {
+      font-weight: 700;
+      color: #555;
+    }
+
+    dd {
+      margin: 0;
+    }
+
+    .actions {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    a.button {
+      display: inline-block;
+      background: #235c4b;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    a.secondary {
+      color: #235c4b;
+    }
+
+    .note {
+      margin-top: 1.5rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Media hit created</h1>
+
+    <p class="success-message">
+      The media hit was submitted successfully.
+    </p>
+
+    <dl>
+      <dt>Headline</dt>
+      <dd>{{HEADLINE}}</dd>
+
+      <dt>Publisher</dt>
+      <dd>{{PUBLISHER}}</dd>
+
+      <dt>Author</dt>
+      <dd>{{AUTHOR}}</dd>
+
+      <dt>Date published</dt>
+      <dd>{{DATE_PUBLISHED}}</dd>
+
+      <dt>Article URL</dt>
+      <dd>
+        <a href="{{ARTICLE_URL}}" target="_blank" rel="noopener noreferrer">
+          {{ARTICLE_URL}}
+        </a>
+      </dd>
+
+      <dt>Salesforce ID</dt>
+      <dd>{{SALESFORCE_ID}}</dd>
+    </dl>
+
+    <div class="actions">
+      <a class="button" href="{{SALESFORCE_URL}}" target="_blank" rel="noopener noreferrer">
+        View in Salesforce
+      </a>
+
+      <a class="secondary" href="{{ARTICLE_URL}}" target="_blank" rel="noopener noreferrer">
+        Return to article
+      </a>
+    </div>
+
+    <p class="note">
+      This is currently using a dummy Salesforce URL. Once the Salesforce API is connected,
+      this page can link to the real created Media Hit record.
+    </p>
+  </main>
+</body>
+</html>
