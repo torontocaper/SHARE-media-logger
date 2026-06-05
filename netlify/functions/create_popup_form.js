@@ -41,6 +41,8 @@ exports.handler = async function (event) {
   // This assumes the file lives at:
   // netlify/popup_form.html
   const templatePath = path.join(
+    process.cwd(),
+    "netlify",
     "popup_form.html"
   );
 
