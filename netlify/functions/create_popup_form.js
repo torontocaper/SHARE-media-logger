@@ -1,10 +1,8 @@
-// netlify/functions/create_popup_form.js
-
 // This is a Netlify Function.
 //
 // Its job is:
-// 1. Receive article data from the bookmarklet.
-// 2. Load the HTML form template.
+// 1. Receive article data from bookmarklet.js.
+// 2. Load the popup_form.html template.
 // 3. Insert the article data into the form.
 // 4. Return the finished HTML page.
 
@@ -12,16 +10,9 @@ const fs = require("fs");
 const path = require("path");
 
 
-// Netlify looks for this "handler" function.
-// This is the main function that runs when someone visits:
-//
-// /.netlify/functions/create_popup_form
+// This is the main function that runs when someone visits {site-url}/.netlify/functions/create_popup_form
 exports.handler = async function (event) {
-  // The bookmarklet sends data in the URL query string.
-  //
-  // Example:
-  // ?headline=Test&publisher=Daily+Planet
-  //
+  // The bookmarklet sends article data within the URL query string. (e.g. ?headline=Test&publisher=Daily+Planet)
   // Netlify gives us those values here:
   const params = event.queryStringParameters || {};
 
@@ -36,10 +27,7 @@ exports.handler = async function (event) {
   const source_url = params.source_url || "";
 
 
-  // Load the popup form HTML file.
-  //
-  // This assumes the file lives at:
-  // netlify/popup_form.html
+  // Load the popup form HTML file (from netlify/functions directory)
   const templatePath = path.join(
     __dirname,
     "popup_form.html"
@@ -49,12 +37,6 @@ exports.handler = async function (event) {
 
 
   // Replace placeholders in the HTML file with real values.
-  //
-  // Example:
-  // {{headline}}
-  //
-  // becomes:
-  // Responsible investment gains ground in Metropolis
   html = html.replaceAll("{{headline}}", escapeHtml(headline));
   html = html.replaceAll("{{publisher}}", escapeHtml(publisher));
   html = html.replaceAll("{{author}}", escapeHtml(author));
@@ -74,9 +56,6 @@ exports.handler = async function (event) {
 
 
 // This prevents article text from accidentally breaking the HTML.
-//
-// For example, if a headline contained a quotation mark,
-// this makes sure it is safe to put inside an <input value="">.
 function escapeHtml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -87,15 +66,7 @@ function escapeHtml(value) {
 }
 
 
-// HTML date inputs want dates in this format:
-//
-// YYYY-MM-DD
-//
-// But article metadata may come in as:
-//
-// 2026-06-04T10:30:00Z
-//
-// This function converts it.
+// Convert date strings into something the HTML date input can understand.
 function formatDateForInput(value) {
   if (!value) {
     return "";
