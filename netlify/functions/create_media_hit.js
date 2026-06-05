@@ -31,7 +31,6 @@ exports.handler = async function (event) {
     // Load the success screen template.
     const templatePath = path.join(
       __dirname,
-      "templates",
       "success_screen.html"
     );
 
