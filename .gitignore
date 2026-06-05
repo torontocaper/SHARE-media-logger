@@ -6,3 +6,4 @@ docs/local
 .netlify
 # Local testing
 .tests
+media_object.json
