@@ -14,17 +14,18 @@ const path = require("path");
 exports.handler = async function (event) {
   // The bookmarklet sends article data within the URL query string. (e.g. ?headline=Test&publisher=Daily+Planet)
   // Netlify gives us those values here:
-  const params = event.queryStringParameters || {};
+  const article_name = event.article_name || "";
+  const link_to_article = event.link_to_article || "";
+  //const params = event.queryStringParameters || {};
 
 
   // Pull each field out of the query string.
   //
   // If a field is missing, use an empty string instead.
-  const headline = params.headline || "";
+/*   const headline = params.headline || "";
   const publisher = params.publisher || "";
   const author = params.author || "";
-  const date_published = params.date_published || "";
-  const source_url = params.source_url || "";
+  const date_published = params.date_published || ""; */
 
 
   // Load the popup form HTML file (from netlify/functions directory)
@@ -37,11 +38,12 @@ exports.handler = async function (event) {
 
 
   // Replace placeholders in the HTML file with real values.
-  html = html.replaceAll("{{headline}}", escapeHtml(headline));
-  html = html.replaceAll("{{publisher}}", escapeHtml(publisher));
+  html = html.replaceAll("{{article_name}}", escapeHtml(article_name));
+/*   html = html.replaceAll("{{publisher}}", escapeHtml(publisher));
   html = html.replaceAll("{{author}}", escapeHtml(author));
-  html = html.replaceAll("{{date_published}}", escapeHtml(formatDateForInput(date_published)));
-  html = html.replaceAll("{{source_url}}", escapeHtml(source_url));
+  html = html.replaceAll("{{date_published}}", escapeHtml(formatDateForInput(date_published))); */
+  html = html.replaceAll("{{link_to_article}}", escapeHtml(link_to_article));
+
 
 
   // Send the filled-in HTML page back to the browser.

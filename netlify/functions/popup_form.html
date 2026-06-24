@@ -86,22 +86,22 @@
     <form method="POST" action="/.netlify/functions/create_media_hit">
 
       <!-- Headline from the article -->
-      <label for="headline">Headline</label>
+      <label for="article_name">Article Name</label>
       <input
-        id="headline"
-        name="headline"
+        id="article_name"
+        name="article_name"
         type="text"
-        value="{{headline}}"
+        value="{{article_name}}"
         required
       >
 
       <!-- Article URL -->
-      <label for="source_url">Article URL</label>
+      <label for="link_to_article">Article URL</label>
       <input
-        id="source_url"
-        name="source_url"
+        id="link_to_article"
+        name="link_to_article"
         type="url"
-        value="{{source_url}}"
+        value="{{link_to_article}}"
         required
       >
 
@@ -111,7 +111,8 @@
         id="publisher"
         name="publisher"
         type="text"
-        value="{{publisher}}"
+        value=""
+        placeholder="The Daily Planet"
       >
 
       <!-- Author / reporter -->
@@ -120,7 +121,8 @@
         id="author"
         name="author"
         type="text"
-        value="{{author}}"
+        value=""
+        placeholder="Clark Kent"
       >
 
       <!-- Publication date -->
@@ -129,7 +131,7 @@
         id="date_published"
         name="date_published"
         type="date"
-        value="{{date_published}}"
+        value=""
       >
 
       <!-- Placeholder submitter field -->
