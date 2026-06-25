@@ -1,34 +1,15 @@
-// This is a Netlify Function.
-//
-// Its job is:
-// 1. Receive article data from bookmarklet.js.
-// 2. Load the popup_form.html template.
-// 3. Insert the article data into the form.
-// 4. Return the finished HTML page.
 
 const fs = require("fs");
 const path = require("path");
 
 
-// This is the main function that runs when someone visits {site-url}/.netlify/functions/create_popup_form
 exports.handler = async function (event) {
-  // The bookmarklet sends article data within the URL query string. (e.g. ?headline=Test&publisher=Daily+Planet)
-  // Netlify gives us those values here:
+  console.log("Someone used the bookmarklet. Event data: " + event);
   const article_name = event.article_name || "";
+  console.log("Article Name: " + article_name);
   const link_to_article = event.link_to_article || "";
-  //const params = event.queryStringParameters || {};
+  console.log("Link to Article: " + link_to_article);
 
-
-  // Pull each field out of the query string.
-  //
-  // If a field is missing, use an empty string instead.
-/*   const headline = params.headline || "";
-  const publisher = params.publisher || "";
-  const author = params.author || "";
-  const date_published = params.date_published || ""; */
-
-
-  // Load the popup form HTML file (from netlify/functions directory)
   console.log("Loading popup_form.html template...");
   const templatePath = path.join(
     __dirname,
@@ -38,13 +19,8 @@ exports.handler = async function (event) {
   let html = fs.readFileSync(templatePath, "utf8");
 
 
-  // Replace placeholders in the HTML file with real values.
   html = html.replaceAll("{{article_name}}", escapeHtml(article_name));
-/*   html = html.replaceAll("{{publisher}}", escapeHtml(publisher));
-  html = html.replaceAll("{{author}}", escapeHtml(author));
-  html = html.replaceAll("{{date_published}}", escapeHtml(formatDateForInput(date_published))); */
   html = html.replaceAll("{{link_to_article}}", escapeHtml(link_to_article));
-
 
 
   // Send the filled-in HTML page back to the browser.
