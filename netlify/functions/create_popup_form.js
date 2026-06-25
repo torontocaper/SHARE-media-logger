@@ -4,10 +4,12 @@ const path = require("path");
 
 
 exports.handler = async function (event) {
-  console.log("Someone used the bookmarklet. Event data: " + event.body);
-  const article_name = event.article_name || "";
+  console.log("Someone used the bookmarklet.")
+  const params = event.queryStringParameters || {};
+  console.log("Query string parameters:", params);
+  const article_name = params.article_name || "";
   console.log("Article Name: " + article_name);
-  const link_to_article = event.link_to_article || "";
+  const link_to_article = params.link_to_article || "";
   console.log("Link to Article: " + link_to_article);
 
   console.log("Loading popup_form.html template...");
