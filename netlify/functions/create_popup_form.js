@@ -29,6 +29,7 @@ exports.handler = async function (event) {
 
 
   // Load the popup form HTML file (from netlify/functions directory)
+  console.log("Loading popup_form.html template...");
   const templatePath = path.join(
     __dirname,
     "popup_form.html"
