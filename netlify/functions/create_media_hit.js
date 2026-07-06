@@ -17,11 +17,11 @@ exports.handler = async function (event) {
     // This converts headline=...&publisher=... into a normal JS object.
     const formData = querystring.parse(event.body);
 
-    const headline = formData.article_name || "";
+    const article_name = formData.article_name || "";
     const publisher = formData.publisher || "";
     const author = formData.author || "";
     const datePublished = formData.date_published || "";
-    const articleUrl = formData.link_to_article || "";
+    const link_to_article = formData.link_to_article || "";
 
     // Eventually, this is where the Salesforce API call will happen.
     // For now, use a dummy Salesforce object ID and URL.
@@ -38,11 +38,11 @@ exports.handler = async function (event) {
 
     // Replace placeholders in the HTML template.
     html = html
-      .replaceAll("{{HEADLINE}}", escapeHtml(headline))
+      .replaceAll("{{ARTICLE_NAME}}", escapeHtml(article_name))
       .replaceAll("{{PUBLISHER}}", escapeHtml(publisher))
       .replaceAll("{{AUTHOR}}", escapeHtml(author))
       .replaceAll("{{DATE_PUBLISHED}}", escapeHtml(datePublished))
-      .replaceAll("{{ARTICLE_URL}}", escapeHtml(articleUrl))
+      .replaceAll("{{LINK_TO_ARTICLE}}", escapeHtml(link_to_article))
       .replaceAll("{{SALESFORCE_URL}}", escapeHtml(dummySalesforceUrl))
       .replaceAll("{{SALESFORCE_ID}}", escapeHtml(dummySalesforceId));
 
@@ -73,52 +73,3 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
 }
-
-
-
-/* exports.handler = async function (event) {
-  try {
-    const formData = new URLSearchParams(event.body);
-
-    const data = {
-      headline: formData.get("headline"),
-      outlet: formData.get("outlet"),
-      author: formData.get("author"),
-      url: formData.get("url"),
-      publication_date: formData.get("publication_date"),
-    };
-
-    console.log("Received new form data:", data);
-
-    return {
-      statusCode: 200,
-      headers: {
-        "Content-Type": "text/html",
-      },
-      body: `
-        <html>
-          <body style="font-family:sans-serif;padding:20px;">
-            <h2>Success</h2>
-            <p><strong>${data.headline || "Media hit"}</strong> was received.</p>
-            <p>You can now close this window.</p>
-          </body>
-        </html>
-      `,
-    };
-  } catch (err) {
-    return {
-      statusCode: 500,
-      headers: {
-        "Content-Type": "text/html",
-      },
-      body: `
-        <html>
-          <body style="font-family:sans-serif;padding:20px;">
-            <h2>Error</h2>
-            <p>${err.message}</p>
-          </body>
-        </html>
-      `,
-    };
-  }
-}; */
