@@ -1,7 +1,5 @@
-
 const fs = require("fs");
 const path = require("path");
-
 
 exports.handler = async function (event) {
   console.log("Someone used the bookmarklet.")
