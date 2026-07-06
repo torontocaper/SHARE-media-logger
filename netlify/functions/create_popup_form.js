@@ -18,10 +18,8 @@ exports.handler = async function (event) {
 
   let html = fs.readFileSync(templatePath, "utf8");
 
-
   html = html.replaceAll("{{article_name}}", escapeHtml(article_name));
   html = html.replaceAll("{{link_to_article}}", escapeHtml(link_to_article));
-
 
   // Send the filled-in HTML page back to the browser.
   return {
@@ -33,7 +31,6 @@ exports.handler = async function (event) {
   };
 };
 
-
 // This prevents article text from accidentally breaking the HTML.
 function escapeHtml(value) {
   return String(value)
@@ -44,9 +41,8 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
-
 // Convert date strings into something the HTML date input can understand.
-function formatDateForInput(value) {
+/* function formatDateForInput(value) {
   if (!value) {
     return "";
   }
@@ -58,4 +54,4 @@ function formatDateForInput(value) {
   }
 
   return date.toISOString().slice(0, 10);
-}
+} */
