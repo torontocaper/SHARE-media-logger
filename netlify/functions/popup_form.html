@@ -7,82 +7,18 @@
 
   <!-- Makes the form look reasonable on smaller screens -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/.netlify/functions/styles.css">
 
-  <style>
-    /*
-      This is intentionally basic styling.
-      The goal right now is: readable, simple, testable.
-    */
-
-    body {
-      font-family: Arial, sans-serif;
-      margin: 24px;
-      background: #f5f5f5;
-      color: #222;
-    }
-
-    main {
-      max-width: 650px;
-      margin: 0 auto;
-      padding: 24px;
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-    }
-
-    h1 {
-      margin-top: 0;
-    }
-
-    label {
-      display: block;
-      margin-top: 16px;
-      font-weight: bold;
-    }
-
-    input,
-    textarea,
-    select {
-      width: 100%;
-      box-sizing: border-box;
-      margin-top: 6px;
-      padding: 8px;
-      font: inherit;
-    }
-
-    textarea {
-      min-height: 100px;
-    }
-
-    button {
-      margin-top: 20px;
-      padding: 10px 14px;
-      font: inherit;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .help {
-      color: #666;
-      font-size: 0.9rem;
-    }
-  </style>
 </head>
 
 <body>
   <main>
-    <h1>Log media hit</h1>
+    <h1>SHARE Media Logger</h1>
 
     <p class="help">
       This form was pre-filled from the article page. Review the fields before submitting.
     </p>
 
-    <!--
-      This is where the form will eventually submit.
-
-      For now, it points to create_media_hit.
-      That function can be built later.
-    -->
     <form method="POST" action="/.netlify/functions/create_media_hit">
 
       <!-- Headline from the article -->
