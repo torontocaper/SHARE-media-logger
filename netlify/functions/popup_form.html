@@ -14,8 +14,7 @@
       This form was pre-filled from the article page. Review the fields before submitting.
     </p>
     <form method="POST" action="/.netlify/functions/create_media_hit">
-      <!-- Headline from the article -->
-      <label for="article_name">Article Name</label>
+      <label for="article_name">Article Name / Headline</label>
       <input
         id="article_name"
         name="article_name"
@@ -23,7 +22,6 @@
         value="{{article_name}}"
         required
       >
-      <!-- Article URL -->
       <label for="link_to_article">Article URL</label>
       <input
         id="link_to_article"
@@ -32,8 +30,7 @@
         value="{{link_to_article}}"
         required
       >
-      <!-- Publisher / outlet -->
-      <label for="publisher">Publisher / outlet</label>
+      <label for="publisher">Publisher / Outlet</label>
       <input
         id="publisher"
         name="publisher"
@@ -41,8 +38,7 @@
         value=""
         placeholder="The Daily Planet"
       >
-      <!-- Author / reporter -->
-      <label for="author">Author / reporter</label>
+      <label for="author">Author / Reporter</label>
       <input
         id="author"
         name="author"
@@ -50,8 +46,7 @@
         value=""
         placeholder="Clark Kent"
       >
-      <!-- Publication date -->
-      <label for="date_published">Date published (defaults to today if unknown)</label>
+      <label for="date_published">Date Published</label>
       <input
         id="date_published"
         name="date_published"
@@ -67,14 +62,12 @@
 
       document.getElementById("date_published").value = `${year}-${month}-${day}`;
       </script>
-      <!-- Placeholder submitter field -->
-      <label for="submitted_by">Submitted by</label>
+      <label for="submitted_by">Submitter</label>
       <select id="submitted_by" name="submitted_by">
         <option value="">Choose...</option>
         <option value="Adam Burns">Adam Burns</option>
         <option value="Other">Other / not listed</option>
       </select>
-      <!-- Optional notes -->
       <label for="notes">Notes</label>
       <textarea
         id="notes"
