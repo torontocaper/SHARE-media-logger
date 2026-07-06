@@ -51,14 +51,22 @@
         placeholder="Clark Kent"
       >
       <!-- Publication date -->
-      <label for="date_published">Date published</label>
+      <label for="date_published">Date published (defaults to today if unknown)</label>
       <input
         id="date_published"
         name="date_published"
         type="date"
         value=""
-        placeholder=<script>new Date()</script>
       >
+      <script>
+      const today = new Date();
+
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, "0");
+      const day = String(today.getDate()).padStart(2, "0");
+
+      document.getElementById("date_published").value = `${year}-${month}-${day}`;
+      </script>
       <!-- Placeholder submitter field -->
       <label for="submitted_by">Submitted by</label>
       <select id="submitted_by" name="submitted_by">
