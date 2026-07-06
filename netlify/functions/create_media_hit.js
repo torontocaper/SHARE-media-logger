@@ -17,11 +17,11 @@ exports.handler = async function (event) {
     // This converts headline=...&publisher=... into a normal JS object.
     const formData = querystring.parse(event.body);
 
-    const headline = formData.headline || "";
+    const headline = formData.article_name || "";
     const publisher = formData.publisher || "";
     const author = formData.author || "";
     const datePublished = formData.date_published || "";
-    const articleUrl = formData.url || "";
+    const articleUrl = formData.link_to_article || "";
 
     // Eventually, this is where the Salesforce API call will happen.
     // For now, use a dummy Salesforce object ID and URL.
