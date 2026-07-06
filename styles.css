@@ -46,6 +46,53 @@ button {
     cursor: pointer;
 }
 
+dl {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 0.5rem 1rem;
+    margin: 1.5rem 0;
+}
+
+dt {
+    font-weight: 700;
+    color: #555;
+}
+
+dd {
+    margin: 0;
+}
+
+.actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+a.button {
+    display: inline-block;
+    background: #235c4b;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+a.secondary {
+    color: #235c4b;
+}
+
+.note {
+    margin-top: 1.5rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+.success-message {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
 .help {
     color: #666;
     font-size: 0.9rem;
