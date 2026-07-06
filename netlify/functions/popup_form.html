@@ -2,25 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
   <title>Log media hit</title>
-
   <!-- Makes the form look reasonable on smaller screens -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/styles.css">
-
 </head>
-
 <body>
   <main>
     <h1>SHARE Media Logger</h1>
-
     <p class="help">
       This form was pre-filled from the article page. Review the fields before submitting.
     </p>
-
     <form method="POST" action="/.netlify/functions/create_media_hit">
-
       <!-- Headline from the article -->
       <label for="article_name">Article Name</label>
       <input
@@ -30,7 +23,6 @@
         value="{{article_name}}"
         required
       >
-
       <!-- Article URL -->
       <label for="link_to_article">Article URL</label>
       <input
@@ -40,7 +32,6 @@
         value="{{link_to_article}}"
         required
       >
-
       <!-- Publisher / outlet -->
       <label for="publisher">Publisher / outlet</label>
       <input
@@ -50,7 +41,6 @@
         value=""
         placeholder="The Daily Planet"
       >
-
       <!-- Author / reporter -->
       <label for="author">Author / reporter</label>
       <input
@@ -60,7 +50,6 @@
         value=""
         placeholder="Clark Kent"
       >
-
       <!-- Publication date -->
       <label for="date_published">Date published</label>
       <input
@@ -68,8 +57,8 @@
         name="date_published"
         type="date"
         value=""
+        placeholder=<script>new Date()</script>
       >
-
       <!-- Placeholder submitter field -->
       <label for="submitted_by">Submitted by</label>
       <select id="submitted_by" name="submitted_by">
@@ -77,7 +66,6 @@
         <option value="Adam Burns">Adam Burns</option>
         <option value="Other">Other / not listed</option>
       </select>
-
       <!-- Optional notes -->
       <label for="notes">Notes</label>
       <textarea
@@ -85,7 +73,6 @@
         name="notes"
         placeholder="Optional context, topics, spokesperson mentioned, etc."
       ></textarea>
-
       <button type="submit">Submit media hit</button>
     </form>
   </main>
