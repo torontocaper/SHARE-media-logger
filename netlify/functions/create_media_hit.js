@@ -20,7 +20,7 @@ exports.handler = async function (event) {
     const article_name = formData.article_name || "";
     const publisher = formData.publisher || "";
     const author = formData.author || "";
-    const datePublished = formData.date_published || "";
+    const date_of_article = formData.date_of_article || "";
     const link_to_article = formData.link_to_article || "";
 
     // Eventually, this is where the Salesforce API call will happen.
@@ -41,7 +41,7 @@ exports.handler = async function (event) {
       .replaceAll("{{ARTICLE_NAME}}", escapeHtml(article_name))
       .replaceAll("{{PUBLISHER}}", escapeHtml(publisher))
       .replaceAll("{{AUTHOR}}", escapeHtml(author))
-      .replaceAll("{{DATE_PUBLISHED}}", escapeHtml(datePublished))
+      .replaceAll("{{DATE_OF_ARTICLE}}", escapeHtml(date_of_article))
       .replaceAll("{{LINK_TO_ARTICLE}}", escapeHtml(link_to_article))
       .replaceAll("{{SALESFORCE_URL}}", escapeHtml(dummySalesforceUrl))
       .replaceAll("{{SALESFORCE_ID}}", escapeHtml(dummySalesforceId));

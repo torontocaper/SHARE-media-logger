@@ -12,7 +12,7 @@
       This form was pre-filled from the article page. Review the fields before submitting.
     </p>
     <form method="POST" action="/.netlify/functions/create_media_hit">
-      <label for="article_name">Article Name / Headline</label>
+      <label for="article_name">Article Name/Headline</label>
       <input
         id="article_name"
         name="article_name"
@@ -28,7 +28,7 @@
         value="{{link_to_article}}"
         required
       >
-      <label for="publisher">Publisher / Outlet</label>
+      <label for="publisher">Publisher/Outlet</label>
       <input
         id="publisher"
         name="publisher"
@@ -36,7 +36,7 @@
         value=""
         placeholder="The Daily Planet"
       >
-      <label for="author">Author / Reporter</label>
+      <label for="author">Reporter/Author</label>
       <input
         id="author"
         name="author"
@@ -44,10 +44,10 @@
         value=""
         placeholder="Clark Kent"
       >
-      <label for="date_published">Date Published</label>
+      <label for="date_of_article">Date the article was published</label>
       <input
-        id="date_published"
-        name="date_published"
+        id="date_of_article"
+        name="date_of_article"
         type="date"
         value=""
       >
@@ -58,7 +58,7 @@
       const month = String(today.getMonth() + 1).padStart(2, "0");
       const day = String(today.getDate()).padStart(2, "0");
 
-      document.getElementById("date_published").value = `${year}-${month}-${day}`;
+      document.getElementById("date_of_article").value = `${year}-${month}-${day}`;
       </script>
       <label for="submitted_by">Submitter</label>
       <select id="submitted_by" name="submitted_by">
