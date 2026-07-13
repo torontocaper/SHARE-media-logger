@@ -1,0 +1,4 @@
+{
+  "url": "/services/data/v67.0/query?q=SELECT+Id,Name+FROM+Account+WHERE+Category__c+=+'Media'+ORDER+BY+Name",
+  "method": "GET"
+}
