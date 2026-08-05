@@ -25,6 +25,8 @@ exports.handler = async function () {
     },
   });
 
+  const result = await response.json();
+
   if (!response.ok) {
     console.error("Salesforce query failed:", result);
       return {
