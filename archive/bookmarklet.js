@@ -16,8 +16,8 @@ const ENVIRONMENT = "local"; // Options: "local", "dev", "prod"
 
 const URLS = {
   local: "http://localhost:8888/.netlify/functions/create_popup_form",
-  dev: "https://dev--share-media-logger.netlify.app/.netlify/functions/create_popup_form",
-  prod: "https://share-media-logger.netlify.app/.netlify/functions/create_popup_form"
+  dev: "NETLIFY_BASE_URL_DEV/create_popup_form",
+  prod: "NETLIFY_BASE_URL/create_popup_form"
 };
 
 
