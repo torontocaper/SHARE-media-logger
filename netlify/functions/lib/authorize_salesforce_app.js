@@ -68,5 +68,5 @@ async function authenticateSalesforce() {
 module.exports = {
   apiVersion,
   authenticateSalesforce,
-  salesforceFetch,
+  //salesforceFetch,
 };
