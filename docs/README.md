@@ -15,17 +15,13 @@ Its current working form involves three separate components:
 
 ## User Guide
 
-> [!NOTE]
-> This User Guide is a work-in-progress. For help using the app, please [contact Adam](mailto:aburns@share.ca) directly.
+> NOTE: This User Guide is a work-in-progress. For help using the app, please [contact Adam](mailto:aburns@share.ca) directly.
 
 ### Step 1: Add the bookmarklet to your browser
 
 This can be done in much the same way you add a regular **bookmark**. The difference is that, instead of entering a web address like `https://facebook.com` in the URL field, you'll enter a line of code starting with `javascript:`.
 
-> [!TIP]
-> 
-> For a detailed guide on how to do this in different browsers (e.g. Chrome, Firefox, Safari), check out this article:
-> 
+> TIP: For a detailed guide on how to do this in different browsers (e.g. Chrome, Firefox, Safari), check out the following article: 
 > [What are Bookmarklets? How to Use JavaScript to Make a Bookmarklet in Chromium and Firefox](https://www.freecodecamp.org/news/what-are-bookmarklets/)
 
 If you're interested in what else you can do with bookmarklets, there are plenty of resources out there. For now, all you need to do is copy the following (very long!) line of code and paste that into the URL field for a new bookmark[^2]:
