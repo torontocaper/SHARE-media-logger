@@ -43,18 +43,3 @@ exports.handler = async function () {
       }),
     };
   }
-  /* catch (error) {
-    console.error("Media outlet lookup failed:", error);
-
-    return {
-      statusCode: 500,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        success: false,
-        error: error.message,
-      }),
-    };
-  };
-}; */
