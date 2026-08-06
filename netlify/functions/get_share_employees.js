@@ -8,7 +8,7 @@ exports.handler = async function () {
   const sf_query = `
     SELECT Id, Name
     FROM Contact
-    WHERE AccountId = '0016000000HVio3AAD'
+    WHERE AccountId = '0016000000HVio3AAD' AND Inactive__c = false
     ORDER BY Name
   `.replace(/\s+/g, " ").trim();
 
