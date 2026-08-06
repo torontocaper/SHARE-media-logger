@@ -15,6 +15,7 @@ exports.handler = async function (event) {
 
   html = html.replaceAll("{{article_name}}", escapeHtml(article_name));
   html = html.replaceAll("{{link_to_article}}", escapeHtml(link_to_article));
+  html = html.replaceAll("{{adam_email}}", escapeHtml(process.env.ADAM_EMAIL));
 
   // Send the filled-in HTML page back to the browser.
   return {

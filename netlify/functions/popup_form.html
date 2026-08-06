@@ -10,7 +10,7 @@
       <br><br>
       Some of this form's fields will have auto-populated when you activated the bookmarklet. Please double-check their accuracy, and fill in as many of the other fields as you can.
       <br><br>
-      If you have any questions, please <a id="adam_email" href="mailto:{{ADAM_EMAIL}}">contact Adam</a>.
+      If you have any questions, please <a id="adam_email" href="mailto:{{adam_email}}">contact Adam</a>.
     </p>
     <br>
     <form method="POST" action="/.netlify/functions/create_media_hit">
@@ -57,13 +57,6 @@
         type="date"
         value=""
       >
-<!--       <script>
-      const today = new Date();
-      const year = today.getFullYear();
-      const month = String(today.getMonth() + 1).padStart(2, "0");
-      const day = String(today.getDate()).padStart(2, "0");
-      document.getElementById("date_of_article").value = `${year}-${month}-${day}`;
-      </script> -->
       <br><br>
       <label for="submitted_by">Submitter</label>
       <select id="submitted_by" name="submitted_by">
