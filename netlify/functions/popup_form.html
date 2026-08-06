@@ -50,14 +50,13 @@
         name="date_of_article"
         type="date"
         value=""
-        placeholder=""
       >
       <script>
       const today = new Date();
       const year = today.getFullYear();
       const month = String(today.getMonth() + 1).padStart(2, "0");
       const day = String(today.getDate()).padStart(2, "0");
-      document.getElementById("date_of_article").placeholder = `${year}-${month}-${day}`;
+      document.getElementById("date_of_article").value = `${year}-${month}-${day}`;
       </script>
       <label for="submitted_by">Submitter</label>
       <select id="submitted_by" name="submitted_by">
