@@ -1,9 +1,11 @@
 # Secrets
 .env
-.secrets/
-docs/local
-# Local Netlify folder
+.secrets
+# Local folders
 .netlify
+.salesforce
+.zapier
 # Local testing
 .tests
-media_object.json
+# Archive
+.archive

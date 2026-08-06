@@ -1,4 +1,0 @@
-{
-  "url": "/services/data/SF_API_VERSION/query?q=SELECT+Id,Name+FROM+Account+WHERE+Category__c+=+'Media'+ORDER+BY+Name",
-  "method": "GET"
-}
