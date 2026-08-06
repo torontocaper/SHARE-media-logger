@@ -8,7 +8,7 @@ exports.handler = async function () {
   const sf_query = `
     SELECT Id, Name
     FROM Contact
-    WHERE Contact_Type__c includes 'Media'
+    WHERE Contact_Type__c includes ('Media') and Inactive__c = false
     ORDER BY Name
   `.replace(/\s+/g, " ").trim();
 
@@ -24,6 +24,8 @@ exports.handler = async function () {
   });
 
   const result = await response.json();
+
+  console.log("result from get_reporters.js:", result);
 
   const share_employees = result.records.map(
       ({ Id, Name }) => ({
