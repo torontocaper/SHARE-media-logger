@@ -1,9 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
   <title>SHARE Media Logger</title>
-  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <main>
@@ -11,6 +9,7 @@
     <p class="help">
       This form was pre-filled from the article page. Review the fields before submitting.
     </p>
+    <br>
     <form method="POST" action="/.netlify/functions/create_media_hit">
       <label for="article_name">Article Name/Headline</label>
       <input
@@ -20,6 +19,7 @@
         value="{{article_name}}"
         required
       >
+      <br>
       <label for="link_to_article">Article URL</label>
       <input
         id="link_to_article"
@@ -28,6 +28,7 @@
         value="{{link_to_article}}"
         required
       >
+      <br>
       <label for="publisher">Publisher/Outlet</label>
       <input
         id="publisher"
@@ -36,6 +37,7 @@
         value=""
         placeholder="The Daily Planet"
       >
+      <br>
       <label for="author">Reporter/Author</label>
       <input
         id="author"
@@ -44,6 +46,7 @@
         value=""
         placeholder="Clark Kent"
       >
+      <br>
       <label for="date_of_article">Date the article was published</label>
       <input
         id="date_of_article"
@@ -58,12 +61,14 @@
       const day = String(today.getDate()).padStart(2, "0");
       document.getElementById("date_of_article").value = `${year}-${month}-${day}`;
       </script>
+      <br>
       <label for="submitted_by">Submitter</label>
       <select id="submitted_by" name="submitted_by">
         <option value="">Choose...</option>
         <option value="Adam Burns">Adam Burns</option>
         <option value="Other">Other / not listed</option>
       </select>
+      <br>
       <label for="notes">Notes</label>
       <textarea
         id="notes"
