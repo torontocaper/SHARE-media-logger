@@ -63,9 +63,8 @@ async function authenticateSalesforce() {
     headers,
   });
 } */
-/* 
+
 module.exports = {
-  apiVersion,
   authenticateSalesforce,
   //salesforceFetch,
-}; */
+};
