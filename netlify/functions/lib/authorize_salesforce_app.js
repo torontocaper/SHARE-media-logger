@@ -1,7 +1,7 @@
 const sf_instance_url = process.env.SF_INSTANCE_URL;
 //const sf_api_version = process.env.SF_API_VERSION;
 
-async function authenticateSalesforce() {
+async function authenticate_salesforce() {
   const sf_consumer_id = process.env.SF_CONSUMER_ID;
   const sf_consumer_secret = process.env.SF_CONSUMER_SECRET;
 
@@ -28,7 +28,8 @@ async function authenticateSalesforce() {
     }
   );
 
-   const result = await response.json();
+  const result = await response.json();
+  console.log("Salesforce OAuth response:", result);
 /*
   if (!response.ok) {
     console.error("Salesforce OAuth response:", result);
@@ -44,6 +45,12 @@ async function authenticateSalesforce() {
 /*     instanceUrl: result.instance_url,
  */
 }
+
+module.exports = {
+  authenticate_salesforce,
+  //salesforceFetch,
+};
+
 
 /* async function salesforceFetch(path, options = {}) {
   const { accessToken, instanceUrl } =
@@ -63,8 +70,3 @@ async function authenticateSalesforce() {
     headers,
   });
 } */
-
-module.exports = {
-  authenticateSalesforce,
-  //salesforceFetch,
-};
