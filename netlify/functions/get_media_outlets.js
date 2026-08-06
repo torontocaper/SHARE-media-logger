@@ -1,8 +1,9 @@
-const apiVersion = process.env.SF_API_VERSION;
+const sf_api_version = process.env.SF_API_VERSION;
+const sf_instance_url = process.env.SF_INSTANCE_URL;
 const { authenticateSalesforce } = require("./lib/authorize_salesforce_app");
 
 exports.handler = async function () {
-  const accessToken = await authenticateSalesforce();
+  const sf_access_token = await authenticateSalesforce();
 
   const sf_query = `
     SELECT Id, Name
@@ -12,13 +13,13 @@ exports.handler = async function () {
   `.replace(/\s+/g, " ").trim();
 
   const path =
-    `/services/data/${apiVersion}/sf_query` +
+    `/services/data/${sf_api_version}/sf_query` +
     `?q=${encodeURIComponent(sf_query)}`;
 
-  const response = await fetch(`${instanceUrl}${path}`, {
+  const response = await fetch(`${sf_instance_url}${path}`, {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${accessToken}`,
+      Authorization: `Bearer ${sf_access_token}`,
     },
   });
 

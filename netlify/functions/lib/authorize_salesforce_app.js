@@ -1,9 +1,9 @@
-const loginUrl = process.env.SF_INSTANCE_URL;
-const apiVersion = process.env.SF_API_VERSION;
+const sf_instance_url = process.env.SF_INSTANCE_URL;
+//const sf_api_version = process.env.SF_API_VERSION;
 
 async function authenticateSalesforce() {
-  const clientId = process.env.SF_CONSUMER_ID;
-  const clientSecret = process.env.SF_CONSUMER_SECRET;
+  const sf_consumer_id = process.env.SF_CONSUMER_ID;
+  const sf_consumer_secret = process.env.SF_CONSUMER_SECRET;
 
 /*   if (!clientId || !clientSecret) {
     throw new Error(
@@ -13,12 +13,12 @@ async function authenticateSalesforce() {
 
   const body = new URLSearchParams({
     grant_type: "client_credentials",
-    client_id: clientId,
-    client_secret: clientSecret,
+    client_id: sf_consumer_id,
+    client_secret: sf_consumer_secret,
   });
 
   const response = await fetch(
-    `${loginUrl}/services/oauth2/token`,
+    `${sf_instance_url}/services/oauth2/token`,
     {
       method: "POST",
       headers: {
