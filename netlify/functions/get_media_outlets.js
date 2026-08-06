@@ -13,7 +13,7 @@ exports.handler = async function () {
   `.replace(/\s+/g, " ").trim();
   console.log("Salesforce query:", sf_query);
   const path =
-    `/services/data/${sf_api_version}/sf_query` +
+    `/services/data/${sf_api_version}/query` +
     `?q=${encodeURIComponent(sf_query)}`;
   console.log("Salesforce query path:", path);
   const response = await fetch(`${sf_instance_url}${path}`, {
