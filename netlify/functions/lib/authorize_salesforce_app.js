@@ -5,11 +5,11 @@ async function authenticateSalesforce() {
   const clientId = process.env.SF_CONSUMER_ID;
   const clientSecret = process.env.SF_CONSUMER_SECRET;
 
-  if (!clientId || !clientSecret) {
+/*   if (!clientId || !clientSecret) {
     throw new Error(
       "Missing SF_CONSUMER_ID or SF_CONSUMER_SECRET."
     );
-  }
+  } */
 
   const body = new URLSearchParams({
     grant_type: "client_credentials",
@@ -28,8 +28,8 @@ async function authenticateSalesforce() {
     }
   );
 
-  const result = await response.json();
-
+   const result = await response.json();
+/*
   if (!response.ok) {
     console.error("Salesforce OAuth response:", result);
 
@@ -38,12 +38,11 @@ async function authenticateSalesforce() {
       result.error ||
       "Salesforce authentication failed."
     );
-  }
+  } */
 
-  return {
-    accessToken: result.access_token,
-    instanceUrl: result.instance_url,
-  };
+  return result.access_token;
+/*     instanceUrl: result.instance_url,
+ */
 }
 
 /* async function salesforceFetch(path, options = {}) {

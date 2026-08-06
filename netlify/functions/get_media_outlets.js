@@ -1,13 +1,10 @@
-const {
-  apiVersion,
-  authenticateSalesforce,
-} = require("./lib/authorize_salesforce_app");
+const apiVersion = process.env.SF_API_VERSION;
+const authenticateSalesforce = require("./lib/authorize_salesforce_app");
 
 exports.handler = async function () {
-  const { accessToken, instanceUrl } =
-    await authenticateSalesforce();
+  const accessToken = await authenticateSalesforce();
 
-  const query = `
+  const sf_query = `
     SELECT Id, Name
     FROM Account
     WHERE Category__c = 'Media'
@@ -15,8 +12,8 @@ exports.handler = async function () {
   `.replace(/\s+/g, " ").trim();
 
   const path =
-    `/services/data/${apiVersion}/query` +
-    `?q=${encodeURIComponent(query)}`;
+    `/services/data/${apiVersion}/sf_query` +
+    `?q=${encodeURIComponent(sf_query)}`;
 
   const response = await fetch(`${instanceUrl}${path}`, {
     method: "GET",
@@ -27,7 +24,7 @@ exports.handler = async function () {
 
   const result = await response.json();
 
-  if (!response.ok) {
+/*   if (!response.ok) {
     console.error("Salesforce query failed:", result);
       return {
         statusCode: response.status,
@@ -39,7 +36,7 @@ exports.handler = async function () {
           error: result,
         }),
       };
-    }
+    } */
 
   const outlets = result.records.map(
       ({ Id, Name }) => ({
