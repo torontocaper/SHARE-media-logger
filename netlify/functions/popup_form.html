@@ -1,13 +1,17 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>SHARE Media Logger</title>
+  <title>SHARE Media Logger: Add Media Hit</title>
 </head>
 <body>
   <main>
-    <h1>SHARE Media Logger</h1>
+    <h1>Add a media hit to Salesforce</h1>
     <p class="help">
-      This form was pre-filled from the article page. Review the fields before submitting.
+      Thank you for adding a media hit to SHARE's Salesforce database.
+      <br>
+      Some of this form's fields will be pre-filled. Please fill in as many of the fields as you can.
+      <br>
+      If you have any questions, please <a href="mailto:{{ADAM_EMAIL}}">contact Adam</a>.
     </p>
     <br>
     <form method="POST" action="/.netlify/functions/create_media_hit">
@@ -19,7 +23,7 @@
         value="{{article_name}}"
         required
       >
-      <br>
+      <br><br>
       <label for="link_to_article">Article URL</label>
       <input
         id="link_to_article"
@@ -28,7 +32,7 @@
         value="{{link_to_article}}"
         required
       >
-      <br>
+      <br><br>
       <label for="publisher">Publisher/Outlet</label>
       <input
         id="publisher"
@@ -37,7 +41,7 @@
         value=""
         placeholder="The Daily Planet"
       >
-      <br>
+      <br><br>
       <label for="author">Reporter/Author</label>
       <input
         id="author"
@@ -46,7 +50,7 @@
         value=""
         placeholder="Clark Kent"
       >
-      <br>
+      <br><br>
       <label for="date_of_article">Date the article was published</label>
       <input
         id="date_of_article"
@@ -61,14 +65,14 @@
       const day = String(today.getDate()).padStart(2, "0");
       document.getElementById("date_of_article").value = `${year}-${month}-${day}`;
       </script>
-      <br>
+      <br><br>
       <label for="submitted_by">Submitter</label>
       <select id="submitted_by" name="submitted_by">
         <option value="">Choose...</option>
         <option value="Adam Burns">Adam Burns</option>
         <option value="Other">Other / not listed</option>
       </select>
-      <br>
+      <br><br>
       <label for="notes">Notes</label>
       <textarea
         id="notes"
