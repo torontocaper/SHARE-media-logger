@@ -13,9 +13,9 @@ exports.handler = async function (event) {
 
   let html = fs.readFileSync(templatePath, "utf8");
 
-  html = html.replaceAll("{{article_name}}", escapeHtml(article_name));
+  html = html.replaceAll("{{article_name}}", escapeHtml(article_name.substring(0, 80)));
   html = html.replaceAll("{{link_to_article}}", escapeHtml(link_to_article));
-  html = html.replaceAll("{{adam_email}}", escapeHtml(process.env.ADAM_EMAIL));
+  html = html.replaceAll("{{adam_email}}", process.env.ADAM_EMAIL);
 
   // Send the filled-in HTML page back to the browser.
   return {
