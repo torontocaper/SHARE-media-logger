@@ -4,15 +4,6 @@ const querystring = require("querystring");
 
 exports.handler = async function (event) {
   try {
-    // Only allow POST requests.
-    if (event.httpMethod !== "POST") {
-      return {
-        statusCode: 405,
-        headers: { "Content-Type": "text/plain" },
-        body: "Method Not Allowed",
-      };
-    }
-
     // The form may submit as application/x-www-form-urlencoded.
     // This converts headline=...&publisher=... into a normal JS object.
     const formData = querystring.parse(event.body);
@@ -22,6 +13,8 @@ exports.handler = async function (event) {
     const author = formData.author || "";
     const date_of_article = formData.date_of_article || "";
     const link_to_article = formData.link_to_article || "";
+    const submitted_by = formData.submitted_by || "";
+    const notes = formData.notes || "";
 
     // Eventually, this is where the Salesforce API call will happen.
     // For now, use a dummy Salesforce object ID and URL.
