@@ -46,5 +46,31 @@
       <button type="submit">Submit</button>
     </form>
   </main>
+<script>
+  async function populateSelect(endpoint, selectId) {
+  const response = await fetch(endpoint);
+  const data = await response.json();
+
+  const select = document.getElementById(selectId);
+
+  select.innerHTML = '<option value="">Choose...</option>';
+
+  for (const record of data.records) {
+    const option = document.createElement("option");
+
+    option.value = record.id;
+    option.textContent = record.name;
+
+    select.appendChild(option);
+  }
+}
+
+  populateSelect("/.netlify/functions/get_publishers", "publisher");
+  populateSelect("/.netlify/functions/get_reporters", "author");
+  populateSelect("/.netlify/functions/get_share_employees", "submitted_by");
+</script>
+
+
+
 </body>
 </html>
