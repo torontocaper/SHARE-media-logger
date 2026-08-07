@@ -1,5 +1,4 @@
 const sf_instance_url = process.env.SF_INSTANCE_URL;
-//const sf_api_version = process.env.SF_API_VERSION;
 
 async function authenticate_salesforce() {
   const sf_consumer_id = process.env.SF_CONSUMER_ID;

@@ -25,21 +25,21 @@ exports.handler = async function () {
 
   const result = await response.json();
 
-  const outlets = result.records.map(
+  const records = result.records.map(
       ({ Id, Name }) => ({
         id: Id,
         name: Name,
       })
     );
 
-    return {
-      statusCode: 200,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        success: true,
-        outlets,
-      }),
-    };
+  return {
+  statusCode: 200,
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    success: true,
+    records,
+  }),
+  };
   }

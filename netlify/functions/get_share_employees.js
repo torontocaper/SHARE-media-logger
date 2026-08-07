@@ -25,7 +25,7 @@ exports.handler = async function () {
 
   const result = await response.json();
 
-  const share_employees = result.records.map(
+  const records = result.records.map(
       ({ Id, Name }) => ({
         id: Id,
         name: Name,
@@ -39,7 +39,7 @@ exports.handler = async function () {
       },
       body: JSON.stringify({
         success: true,
-        share_employees,
+        records,
       }),
     };
   }
