@@ -16,63 +16,32 @@
     </header>
     <br><br>
     <form method="POST" action="/.netlify/functions/create_media_hit">
-      <label for="article_name">Article Name/Headline</label>
-      <input
-        id="article_name"
-        name="article_name"
-        type="text"
-        value="{{article_name}}"
-        required
-      >
+      <label for="article_name">Article name/Headline: </label>
+      <input id="article_name" name="article_name" type="text" value="{{article_name}}" required>
       <br><br>
-      <label for="link_to_article">Article URL</label>
-      <input
-        id="link_to_article"
-        name="link_to_article"
-        type="url"
-        value="{{link_to_article}}"
-        required
-      >
+      <label for="link_to_article">Article URL: </label>
+      <input id="link_to_article" name="link_to_article" type="url" value="{{link_to_article}}" required>
       <br><br>
-      <label for="publisher">Publisher/Outlet</label>
-      <input
-        id="publisher"
-        name="publisher"
-        type="text"
-        value=""
-        placeholder="The Daily Planet"
-      >
-      <br><br>
-      <label for="author">Reporter/Author</label>
-      <input
-        id="author"
-        name="author"
-        type="text"
-        value=""
-        placeholder="Clark Kent"
-      >
-      <br><br>
-      <label for="date_of_article">Date the article was published</label>
-      <input
-        id="date_of_article"
-        name="date_of_article"
-        type="date"
-        value=""
-      >
-      <br><br>
-      <label for="submitted_by">Submitter</label>
-      <select id="submitted_by" name="submitted_by">
-        <option value="">Choose...</option>
-        <option value="Adam Burns">Adam Burns</option>
-        <option value="Other">Other / not listed</option>
+      <label for="publisher">Publisher/Outlet: </label>
+      <select id="publisher" name="publisher">
+        <option value="">Loading media outlets...</option>
       </select>
       <br><br>
-      <label for="notes">Notes</label>
-      <textarea
-        id="notes"
-        name="notes"
-        placeholder="Any further details..."
-      ></textarea>
+      <label for="author">Reporter/Author: </label>
+      <select id="author" name="author">
+        <option value="">Loading reporters...</option>
+      </select>
+      <br><br>
+      <label for="date_of_article">Date the article was published: </label>
+      <input id="date_of_article" name="date_of_article" type="date" value="">
+      <br><br>
+      <label for="submitted_by">Submitter: </label>
+      <select id="submitted_by" name="submitted_by">
+        <option value="">Loading SHARE employees...</option>
+      </select>
+      <br><br>
+      <label for="notes">Notes: </label>
+      <textarea id="notes" name="notes" placeholder="Any further details..."></textarea>
       <br><br>
       <button type="submit">Submit</button>
     </form>
