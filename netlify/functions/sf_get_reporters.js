@@ -1,6 +1,6 @@
 const sf_api_version = process.env.SF_API_VERSION;
 const sf_instance_url = process.env.SF_INSTANCE_URL;
-const { authenticate_salesforce } = require("../lib/authorize_salesforce_app");
+const { authenticate_salesforce } = require("./lib/authorize_salesforce_app");
 
 exports.handler = async function () {
   const sf_access_token = await authenticate_salesforce();
