@@ -29,8 +29,8 @@ exports.handler = async function (event) {
       method: "POST",
       headers: {
         Authorization: `Bearer ${sf_access_token}`,
+        contentType: "application/json",
       },
-      contentType: "application/json",
       body: JSON.stringify({
         Name: article_name,
         Reporter__c: author,
