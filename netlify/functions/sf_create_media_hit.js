@@ -41,6 +41,8 @@ exports.handler = async function (event) {
 
     const result = await response.json();
 
+    console.log("Salesforce API response:", result);
+
     if (!response.ok) {
       throw new Error(`Salesforce API error: ${result[0]?.message || 'Unknown error'}`);
     }
