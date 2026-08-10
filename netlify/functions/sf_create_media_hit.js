@@ -22,10 +22,10 @@ exports.handler = async function (event) {
     const submitted_by = formData.submitted_by || "";
     const notes = formData.notes || "";
 
-    const path =
+    const sf_api_path =
     `${sf_instance_url}/services/data/${sf_api_version}/sobjects/Media__c/`;
 
-    const response = await fetch(path, {
+    const response = await fetch(sf_api_path, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${sf_access_token}`,
