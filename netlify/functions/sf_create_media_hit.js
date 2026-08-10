@@ -6,6 +6,8 @@ const sf_instance_url = process.env.SF_INSTANCE_URL;
 const { authenticate_salesforce } = require("./lib/authorize_salesforce_app");
 
 exports.handler = async function (event) {
+  console.log("Received event:", event);
+  
   try {
     
     const sf_access_token = await authenticate_salesforce();
