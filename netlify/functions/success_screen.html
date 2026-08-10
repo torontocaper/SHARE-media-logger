@@ -3,37 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <title>SHARE Media Logger</title>
-  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <main>
-    <h1>Media hit created</h1>
-    <p class="success-message">
-      Thank you for logging this media hit.<br><br>You can view it in Salesforce and/or add more details by clicking the button below.<br><br>You may now close this window.
+    <h1>Success! Media hit created</h1>
+    <p>
+      Thank you for logging this media hit.
+      <br><br>
+      It is now available in <a href="{{LINK_TO_ARTICLE}}" target="_blank" rel="noopener noreferrer">Salesforce</a>, where you can add more details and view the rest of our media database.
+      <br><br>
+      You may now close this window.
     </p>
-    <dl>
-      <dt>Article Name:</dt>
-      <dd>{{ARTICLE_NAME}}</dd>
-      <dt>Publisher:</dt>
-      <dd>{{PUBLISHER}}</dd>
-      <dt>Author:</dt>
-      <dd>{{AUTHOR}}</dd>
-      <dt>Date published:</dt>
-      <dd>{{DATE_OF_ARTICLE}}</dd>
-      <dt>Article URL:</dt>
-      <dd>
-        <a href="{{LINK_TO_ARTICLE}}" target="_blank" rel="noopener noreferrer">
-          {{LINK_TO_ARTICLE}}
-        </a>
-      </dd>
-      <dt>Salesforce ID:</dt>
-      <dd>{{SALESFORCE_ID}}</dd>
-    </dl>
-    <div class="actions">
-      <a class="button" href="{{SALESFORCE_URL}}" target="_blank" rel="noopener noreferrer">
-        View in Salesforce
-      </a>
-    </div>
   </main>
 </body>
 </html>
