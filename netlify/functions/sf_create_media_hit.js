@@ -29,7 +29,7 @@ exports.handler = async function (event) {
       method: "POST",
       headers: {
         Authorization: `Bearer ${sf_access_token}`,
-        contentType: "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         Name: article_name,
@@ -38,7 +38,6 @@ exports.handler = async function (event) {
         Description_Notes__c: notes,
         Date_of_article__c: date_of_article,
         Media_Outlet_Organization__c: publisher,
-        CreatedById: submitted_by,
       })
     });
 
