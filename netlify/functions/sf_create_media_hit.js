@@ -1,11 +1,15 @@
 const fs = require("fs");
 const path = require("path");
 const querystring = require("querystring");
+const sf_api_version = process.env.SF_API_VERSION;
+const sf_instance_url = process.env.SF_INSTANCE_URL;
+const { authenticate_salesforce } = require("./lib/authorize_salesforce_app");
 
 exports.handler = async function (event) {
   try {
-    // The form may submit as application/x-www-form-urlencoded.
-    // This converts headline=...&publisher=... into a normal JS object.
+    
+    const sf_access_token = await authenticate_salesforce();
+    
     const formData = querystring.parse(event.body);
 
     const article_name = formData.article_name || "";
@@ -16,10 +20,33 @@ exports.handler = async function (event) {
     const submitted_by = formData.submitted_by || "";
     const notes = formData.notes || "";
 
-    // Eventually, this is where the Salesforce API call will happen.
-    // For now, use a dummy Salesforce object ID and URL.
-    const dummySalesforceId = "a00ABC123456789";
-    const dummySalesforceUrl = `https://share.lightning.force.com/lightning/r/Media_Hit__c/${dummySalesforceId}/view`;
+    const path =
+    `${sf_instance_url}/services/data/${sf_api_version}/sobjects/Media__c/`;
+
+    const response = await fetch(path, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${sf_access_token}`,
+      },
+      body: JSON.stringify({
+        Name: article_name,
+        Reporter__c: author,
+        Link_to_article__c: link_to_article,
+        Description_Notes__c: notes,
+        Date_of_article__c: date_of_article,
+        Media_Outlet_Organization__c: publisher,
+        CreatedById: submitted_by,
+      })
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(`Salesforce API error: ${result[0]?.message || 'Unknown error'}`);
+    }
+
+    const sf_id = result.id;
+    const sf_url = `${sf_instance_url}/lightning/r/Media_Hit__c/${sf_id}/view`;
 
     // Load the success screen template.
     const templatePath = path.join(
@@ -31,13 +58,7 @@ exports.handler = async function (event) {
 
     // Replace placeholders in the HTML template.
     html = html
-      .replaceAll("{{ARTICLE_NAME}}", escapeHtml(article_name))
-      .replaceAll("{{PUBLISHER}}", escapeHtml(publisher))
-      .replaceAll("{{AUTHOR}}", escapeHtml(author))
-      .replaceAll("{{DATE_OF_ARTICLE}}", escapeHtml(date_of_article))
-      .replaceAll("{{LINK_TO_ARTICLE}}", escapeHtml(link_to_article))
-      .replaceAll("{{SALESFORCE_URL}}", escapeHtml(dummySalesforceUrl))
-      .replaceAll("{{SALESFORCE_ID}}", escapeHtml(dummySalesforceId));
+      .replaceAll("{{SF_LINK}}", escapeHtml(sf_url))
 
     return {
       statusCode: 200,
