@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 exports.handler = async function (event) {
+  console.log("Creating popup form from event: ", event)
   const params = event.queryStringParameters || {};
   const article_name = params.article_name || "";
   const link_to_article = params.link_to_article || "";
