@@ -40,7 +40,12 @@
       <br><br>
       <label for="share_spokesperson">SHARE spokesperson: </label>
       <select id="share_spokesperson" name="share_spokesperson">
-        <option value="">Loading SHARE employees...</option>
+        <option value="">Loading SHARE contacts...</option>
+      </select>
+      <br><br>
+      <label for="submitted_by">Submitted by: </label>
+      <select id="submitted_by" name="submitted_by">
+        <option value="">Loading SHARE users...</option>
       </select>
       <br><br>
       <label for="notes">Notes: </label>
@@ -70,6 +75,7 @@
   populateSelect("/.netlify/functions/sf_get_media_outlets", "publisher");
   populateSelect("/.netlify/functions/sf_get_reporters", "author");
   populateSelect("/.netlify/functions/sf_get_share_contacts", "share_spokesperson");
+  populateSelect("/.netlify/functions/sf_get_share_users", "submitted_by");
 </script>
 </body>
 </html>

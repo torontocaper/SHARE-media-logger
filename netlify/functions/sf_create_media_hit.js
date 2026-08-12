@@ -23,6 +23,7 @@ exports.handler = async function (event) {
     const notes = formData.notes || "";
     const is_share_related = formData.is_share_related === "true";
     const share_spokesperson = formData.share_spokesperson || "";
+    const submitted_by = formData.submitted_by || "";
 
     const sf_api_path =
     `${sf_instance_url}/services/data/${sf_api_version}/sobjects/Media__c/`;
@@ -42,6 +43,7 @@ exports.handler = async function (event) {
         Media_Outlet_Organization__c: publisher,
         SHARE_related__c: is_share_related,
         SHARE_spokesperson__c: share_spokesperson,
+        Submitted_By__c: submitted_by,
       })
     });
 
