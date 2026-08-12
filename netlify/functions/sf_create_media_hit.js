@@ -23,7 +23,6 @@ exports.handler = async function (event) {
     const notes = formData.notes || "";
     const is_share_related = formData.is_share_related === "true";
     const share_spokesperson = formData.share_spokesperson || "";
-    const submitted_by = formData.submitted_by || "";
 
     const sf_api_path =
     `${sf_instance_url}/services/data/${sf_api_version}/sobjects/Media__c/`;
