@@ -25,6 +25,8 @@ exports.handler = async function () {
 
   const result = await response.json();
 
+  console.log("result from get_share_users.js:", result);
+
   const records = result.records.map(
       ({ Id, Name }) => ({
         id: Id,

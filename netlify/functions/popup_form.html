@@ -35,8 +35,11 @@
       <label for="date_of_article">Date the article was published: </label>
       <input id="date_of_article" name="date_of_article" type="date" value="">
       <br><br>
-      <label for="submitted_by">Submitter: </label>
-      <select id="submitted_by" name="submitted_by">
+      <label for="is_share_related">Is the article SHARE-related? (ie: Does it mention SHARE or its work?) </label>
+      <input id="is_share_related" name="is_share_related" type="checkbox" value="false">
+      <br><br>
+      <label for="share_spokesperson">SHARE spokesperson: </label>
+      <select id="share_spokesperson" name="share_spokesperson">
         <option value="">Loading SHARE employees...</option>
       </select>
       <br><br>
@@ -66,7 +69,7 @@
 }
   populateSelect("/.netlify/functions/sf_get_media_outlets", "publisher");
   populateSelect("/.netlify/functions/sf_get_reporters", "author");
-  populateSelect("/.netlify/functions/sf_get_share_employees", "submitted_by");
+  populateSelect("/.netlify/functions/sf_get_share_contacts", "share_spokesperson");
 </script>
 </body>
 </html>

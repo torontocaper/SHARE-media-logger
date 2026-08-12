@@ -7,8 +7,8 @@ exports.handler = async function () {
 
   const sf_query = `
     SELECT Id, Name
-    FROM Account
-    WHERE Category__c = 'Media'
+    FROM Contact
+    WHERE AccountId = '${process.env.SF_SHARE_ID}' and Inactive__c = false
     ORDER BY Name
   `.replace(/\s+/g, " ").trim();
 
@@ -25,7 +25,7 @@ exports.handler = async function () {
 
   const result = await response.json();
 
-  console.log("result from get_media_outlets.js:", result);
+  console.log("result from get_share_contacts.js:", result);
 
   const records = result.records.map(
       ({ Id, Name }) => ({
@@ -34,14 +34,14 @@ exports.handler = async function () {
       })
     );
 
-  return {
-  statusCode: 200,
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    success: true,
-    records,
-  }),
-  };
+    return {
+      statusCode: 200,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        success: true,
+        records,
+      }),
+    };
   }

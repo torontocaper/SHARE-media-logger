@@ -8,7 +8,7 @@ exports.handler = async function () {
   const sf_query = `
     SELECT Id, Name
     FROM Contact
-    WHERE Contact_Type__c includes ('Media') and Inactive__c = false
+    WHERE Contact_Type__c =  Inactive__c = false
     ORDER BY Name
   `.replace(/\s+/g, " ").trim();
 
