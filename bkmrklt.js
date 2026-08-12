@@ -1,1 +1,1 @@
-javascript:window.open(`NETLIFY_BASE_URL_DEV/create_popup_form?article_name=${document.title}&link_to_article=${window.location.href}`,"media_logger_form","popup=true");
+javascript:window.open(`${NETLIFY_BASE_URL}/create_popup_form?article_name=${document.title}&link_to_article=${window.location.href}`,"media_logger_form","popup=true");
