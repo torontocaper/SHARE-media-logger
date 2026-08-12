@@ -8,7 +8,7 @@ Please note: This guide is a work in progress and may not address all cases. For
 
 This can be done in much the same way you would add a regular bookmark/favourite to your browser. 
 
-The key difference is that, instead of entering a web address (like `https://share.ca`) in the URL field, you'll enter a line of `code`, starting with `javascript:`.
+The key difference is that, instead of entering a web address (like https://share.ca) in the URL field, you'll enter a line of code, starting with `javascript:`.
 
 Specifically, *this* line of code[^1]:
 
@@ -20,7 +20,7 @@ For a detailed guide on how to do this in different browsers (e.g. Chrome, Firef
 
 [What are Bookmarklets? How to Use JavaScript to Make a Bookmarklet in Chromium and Firefox](https://www.freecodecamp.org/news/what-are-bookmarklets/)
 
-Give your bookmarklet a descriptive, memorable name (like `Add media hit to Salesforce`), and keep it in a place where you'll easily be able to find it in the future, such as your main "bookmarks" bar. 
+Give your bookmarklet a descriptive, memorable name (like "Add media hit to Salesforce"), and keep it in a place where you'll easily be able to find it in the future, such as your main "bookmarks" bar. 
 
 ### Step 2: Fill out the form
 
@@ -32,7 +32,7 @@ Make sure that the pre-filled data is accurate, and fill in as many of the empty
 
 ### Step 3: Check Salesforce for your article
 
-After you click the `Submit` button, you should receive a success message that includes a link to the newly created "Media" object in Salesforce.
+After you click the `SUBMIT` button, you should receive a success message that includes a link to the newly created "Media" object in Salesforce.
 
 Click the link to confirm your media hit was added, and to add more details if you have them. 
 
