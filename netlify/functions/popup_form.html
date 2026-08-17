@@ -16,46 +16,85 @@
     </header>
     <br><br>
     <form method="POST" action="/.netlify/functions/sf_create_media_hit">
+      <!-- Name -->
       <label for="article_name">Article name/Headline: </label>
       <input id="article_name" name="article_name" type="text" value="{{article_name}}" required>
       <br><br>
+      <!-- Link_to_article__c -->
       <label for="link_to_article">Article URL: </label>
       <input id="link_to_article" name="link_to_article" type="url" value="{{link_to_article}}" required>
       <br><br>
-      <label for="publisher">Publisher/Outlet: </label>
+      <!-- Media_Outlet_Organization__c -->
+      <label for="publisher" title="This field only allows organizations that have been added to Salesforce as media outlets. If the outlet is not listed here, you'll have to add it to SF.">Publisher/Outlet: </label>
       <select id="publisher" name="publisher">
         <option value="">Loading media outlets...</option>
       </select>
       <br><br>
-      <label for="author" title="This field only allows contacts who have already been added to Salesforce as reporters. If the reporter is not listed here, leave it blank for now -- and consider adding them to SF later!">Reporter/Author: </label>
+      <!-- Reporter__c -->
+      <label for="author" title="This field only allows contacts who have already been added to Salesforce as reporters. If the reporter is not listed here, leave it blank for now — and consider adding them to SF later!">Reporter/Author: </label>
       <select id="author" name="author">
         <option value="">Loading reporters...</option>
       </select>
       <br><br>
-      <!--
-      TODO: Add 'related organizations' fields
-      Related_Organization__c
-      Related_Organization_secondary__c
-      Related_Organization_third__c
-      -->
+      <!-- Related_Organization__c -->
+      <label for="related_organization_1" title="">Related organization (primary)</label>
+      <select id="related_organization_1" name="related_organization_1">
+        <option value="">Loading organizations...</option>
+      </select>
+      <br><br>
+      <!-- Related_Organization_secondary__c -->
+      <label for="related_organization_2" title="">Related organization (secondary)</label>
+      <select id="related_organization_2" name="related_organization_2">
+        <option value="">Loading organizations...</option>
+      </select>
+      <br><br>
+      <!-- Related_Organization_third__c -->
+      <label for="related_organization_3" title="">Related organization (tertiary)</label>
+      <select id="related_organization_3" name="related_organization_3">
+        <option value="">Loading organizations...</option>
+      </select>
+      <br><br>
+      <!-- Date_of_article__c -->
       <label for="date_of_article">Date the article was published: </label>
       <input id="date_of_article" name="date_of_article" type="date" value="">
       <br><br>
+      <!-- SHARE_related__c -->
       <label for="is_share_related">Is the article SHARE-related? (ie: Does it mention SHARE or its work?) </label>
       <input id="is_share_related" name="is_share_related" type="checkbox" value="false">
       <br><br>
+      <!-- SHARE_spokesperson__c -->
       <label for="share_spokesperson">SHARE spokesperson: </label>
       <select id="share_spokesperson" name="share_spokesperson">
         <option value="">Loading SHARE contacts...</option>
       </select>
       <br><br>
+      <!-- Media_classification__c -->
+      <label for="topics">Topic(s)</label>
+      <select id="topics" name="topics">
+        <option value="">Loading ...</option>
+      </select>
+      <br><br>
+      <!-- Channel__c -->
+      <label for="channel">Channel</label>
+      <select id="channel" name="channel">
+        <option value="">Loading ...</option>
+      </select>
+      <br><br>
+      <!-- Format__c -->
+      <label for="format">Format</label>
+      <select id="format" name="format">
+        <option value="">Loading ...</option>
+      </select>
+      <br><br>
+      <!-- Submitted_By__c -->
       <label for="submitted_by">Submitted by: </label>
       <select id="submitted_by" name="submitted_by">
         <option value="">Loading SHARE users...</option>
       </select>
       <br><br>
+      <!-- Description_Notes__c -->
       <label for="notes">Notes: </label>
-      <textarea id="notes" name="notes" placeholder="Any further details..."></textarea>
+      <textarea id="notes" name="notes" placeholder="Context, questions..."></textarea>
       <br><br>
       <button type="submit">SUBMIT</button>
     </form>
