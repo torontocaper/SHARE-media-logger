@@ -77,9 +77,12 @@
       </select>
       <br><br>
       <!-- Channel__c -->
-      <label for="channel">Channel</label>
+      <label for="channel" title="(According to the PESO model)">Channel</label>
       <select id="channel" name="channel">
-        <option value="">Loading ...</option>
+        <option value="paid" title="We paid for it">Paid</option>
+        <option value="earned" title="We earned it">Earned</option>
+        <option value="shared" title="Social media etc.">Shared</option>
+        <option value="owned" title="We own the outlet">Owned</option>
       </select>
       <br><br>
       <!-- Format__c -->
