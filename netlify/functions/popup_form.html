@@ -36,24 +36,26 @@
         <option value="">Loading reporters...</option>
       </select>
       <br><br>
-      <!-- Related_Organization__c -->
+      <!--
+      < !-- Related_Organization__c -- >
       <label for="related_organization_1" title="">Related organization (primary)</label>
       <select id="related_organization_1" name="related_organization_1">
         <option value="">Loading organizations...</option>
       </select>
       <br><br>
-      <!-- Related_Organization_secondary__c -->
+      < !-- Related_Organization_secondary__c -- >
       <label for="related_organization_2" title="">Related organization (secondary)</label>
       <select id="related_organization_2" name="related_organization_2">
         <option value="">Loading organizations...</option>
       </select>
       <br><br>
-      <!-- Related_Organization_third__c -->
+      < !-- Related_Organization_third__c -- >
       <label for="related_organization_3" title="">Related organization (tertiary)</label>
       <select id="related_organization_3" name="related_organization_3">
         <option value="">Loading organizations...</option>
       </select>
       <br><br>
+      -->
       <!-- Date_of_article__c -->
       <label for="date_of_article">Date the article was published: </label>
       <input id="date_of_article" name="date_of_article" type="date" value="">
@@ -121,9 +123,9 @@
   populateSelect("/.netlify/functions/sf_get_reporters", "author");
   populateSelect("/.netlify/functions/sf_get_share_contacts", "share_spokesperson");
   populateSelect("/.netlify/functions/sf_get_share_users", "submitted_by");
-  populateSelect("/.netlify/functions/sf_get_organizations", "related_organization_1");
-  populateSelect("/.netlify/functions/sf_get_organizations", "related_organization_2");
-  populateSelect("/.netlify/functions/sf_get_organizations", "related_organization_3");
+  //populateSelect("/.netlify/functions/sf_get_organizations", "related_organization_1");
+  //populateSelect("/.netlify/functions/sf_get_organizations", "related_organization_2");
+  //populateSelect("/.netlify/functions/sf_get_organizations", "related_organization_3");
 </script>
 </body>
 </html>
