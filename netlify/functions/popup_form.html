@@ -7,14 +7,14 @@
   <main>
     <header>
       Thank you for adding a media hit to SHARE's Salesforce database!
-      <br><br>
+      <br>
       Some of this form's fields will have auto-populated when you activated the bookmarklet.
-      <br><br>
+      <br>
       Please double-check their accuracy, and fill in as many of the other fields as you can.
-      <br><br>
+      <br>
       If you have any questions, please <a id="adam_email" href="mailto:{{adam_email}}">contact Adam</a>.
     </header>
-    <br><br>
+    <br>
     <form method="POST" action="/.netlify/functions/sf_create_media_hit">
       <!-- Name -->
       <label for="article_name">Article name/Headline: </label>
@@ -59,7 +59,7 @@
       <input id="date_of_article" name="date_of_article" type="date" value="">
       <br><br>
       <!-- SHARE_related__c -->
-      <label for="is_share_related">Is the article SHARE-related? (ie: Does it mention SHARE or its work?) </label>
+      <label for="is_share_related" title="Does it mention SHARE or its work?">Is the article SHARE-related?</label>
       <input id="is_share_related" name="is_share_related" type="checkbox" value="false">
       <br><br>
       <!-- SHARE_spokesperson__c -->
@@ -121,6 +121,9 @@
   populateSelect("/.netlify/functions/sf_get_reporters", "author");
   populateSelect("/.netlify/functions/sf_get_share_contacts", "share_spokesperson");
   populateSelect("/.netlify/functions/sf_get_share_users", "submitted_by");
+  populateSelect("/.netlify/functions/sf_get_organizations", "related_organization_1");
+  populateSelect("/.netlify/functions/sf_get_organizations", "related_organization_2");
+  populateSelect("/.netlify/functions/sf_get_organizations", "related_organization_3");
 </script>
 </body>
 </html>
