@@ -27,11 +27,17 @@
         <option value="">Loading media outlets...</option>
       </select>
       <br><br>
-      <label for="author">Reporter/Author: </label>
+      <label for="author" title="This field only allows contacts who have already been added to Salesforce as reporters. If the reporter is not listed here, leave it blank for now -- and consider adding them to SF later!">Reporter/Author: </label>
       <select id="author" name="author">
         <option value="">Loading reporters...</option>
       </select>
       <br><br>
+      <!--
+      TODO: Add 'related organizations' fields
+      Related_Organization__c
+      Related_Organization_secondary__c
+      Related_Organization_third__c
+      -->
       <label for="date_of_article">Date the article was published: </label>
       <input id="date_of_article" name="date_of_article" type="date" value="">
       <br><br>
