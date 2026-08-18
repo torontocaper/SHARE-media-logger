@@ -17,21 +17,21 @@
     <br>
     <form method="POST" action="/.netlify/functions/sf_create_media_hit">
       <!-- Name -->
-      <label for="article_name">Article name/Headline: </label>
+      <label for="article_name" title="The headline or title of the article. Should populate automatically.">Article name/Headline: </label>
       <input id="article_name" name="article_name" type="text" value="{{article_name}}" required>
       <br><br>
       <!-- Link_to_article__c -->
-      <label for="link_to_article">Article URL: </label>
+      <label for="link_to_article" title="The URL (link) for the article. Should populate automatically.">Article URL: </label>
       <input id="link_to_article" name="link_to_article" type="url" value="{{link_to_article}}" required>
       <br><br>
       <!-- Media_Outlet_Organization__c -->
-      <label for="publisher" title="This field only allows organizations that have been added to Salesforce as media outlets. If the outlet is not listed here, you'll have to add it to SF.">Publisher/Outlet: </label>
+      <label for="publisher" title="Which organization published the article? This field only allows organizations that have been added to Salesforce as media outlets. (If the outlet isn't listed, you'll have to add it to SF to log the hit.)">Publisher/Outlet: </label>
       <select id="publisher" name="publisher">
         <option value="">Loading media outlets...</option>
       </select>
       <br><br>
       <!-- Reporter__c -->
-      <label for="author" title="This field only allows contacts who have already been added to Salesforce as reporters. If the reporter is not listed here, leave it blank for now — and consider adding them to SF later!">Reporter/Author: </label>
+      <label for="author" title="Who wrote the article? This field currently only allows contacts who have already been added to Salesforce as reporters. If the reporter is not listed here, leave it blank for now — and consider adding them to SF later.">Reporter/Author: </label>
       <select id="author" name="author">
         <option value="">Loading reporters...</option>
       </select>
@@ -57,21 +57,21 @@
       <br><br>
       -->
       <!-- Date_of_article__c -->
-      <label for="date_of_article">Date the article was published: </label>
-      <input id="date_of_article" name="date_of_article" type="date" value="">
+      <label for="date_of_article" title="When was the article published? This is a required field.">Publication date: </label>
+      <input id="date_of_article" name="date_of_article" type="date" value="" required>
       <br><br>
       <!-- SHARE_related__c -->
-      <label for="is_share_related" title="Does it mention SHARE or its work?">Is the article SHARE-related?</label>
+      <label for="is_share_related" title="Does the article mention SHARE or its work?">SHARE-related? </label>
       <input id="is_share_related" name="is_share_related" type="checkbox" value="false">
       <br><br>
       <!-- SHARE_spokesperson__c -->
-      <label for="share_spokesperson">SHARE spokesperson: </label>
+      <label for="share_spokesperson" title="If the article is SHARE-related, who is the SHARE spokesperson quoted?">SHARE spokesperson: </label>
       <select id="share_spokesperson" name="share_spokesperson">
         <option value="">Loading SHARE contacts...</option>
       </select>
       <br><br>
       <!-- Media_classification__c -->
-      <label for="topics" title="Select one or more topics that the article covers. Use Ctrl+Click (Windows) or Command+Click (Mac) to select multiple topics.">Topic(s)</label>
+      <label for="topics" title="Select one or more topics that the article covers. Use Ctrl+Click (Windows) or Command+Click (Mac) to select multiple topics.">Topic(s): </label>
       <select id="topics" name="topics" multiple>
         <option value="Air Pollution">Air Pollution</option>
         <option value="Artificial Intelligence">Artificial Intelligence</option>
@@ -149,16 +149,16 @@
       </select>
       <br><br>
       <!-- Channel__c -->
-      <label for="channel" title="(According to the PESO model)">Channel</label>
+      <label for="channel" title="(According to the PESO model)">Channel: </label>
       <select id="channel" name="channel">
         <option value="paid" title="Ads, sponsored content, 'advertorial' etc.">Paid</option>
-        <option value="earned" title="Unpaid coverage in traditional/online media">Earned</option>
+        <option value="earned" title="Unpaid coverage in traditional/online media" selected>Earned</option>
         <option value="shared" title="Social media posts/articles/discussions">Shared</option>
         <option value="owned" title="Posts and articles published by the organization itself">Owned</option>
       </select>
       <br><br>
       <!-- Format__c -->
-      <label for="format">Format</label>
+      <label for="format" title="What type of content is the article?">Format: </label>
       <select id="format" name="format">
         <option value="news">News</option>
         <option value="opinion">Opinion</option>
@@ -172,7 +172,7 @@
       </select>
       <br><br>
       <!-- Submitted_By__c -->
-      <label for="submitted_by">Submitted by: </label>
+      <label for="submitted_by" title="Who is submitting this media hit? (Hint: it's you!)">Submitted by: </label>
       <select id="submitted_by" name="submitted_by">
         <option value="">Loading SHARE users...</option>
       </select>
