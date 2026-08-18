@@ -25,6 +25,7 @@ exports.handler = async function (event) {
     const share_spokesperson = formData.share_spokesperson || "";
     const channel = formData.channel || "";
     const format = formData.format || "";
+    const topics = formData.topics || [];
 
     const sf_api_path =
     `${sf_instance_url}/services/data/${sf_api_version}/sobjects/Media__c/`;
@@ -47,6 +48,7 @@ exports.handler = async function (event) {
         Submitted_By__c: submitted_by,
         Channel__c: channel,
         Format__c: format,
+        Media_classification__c: topics.join(";") // Join multiple topics with a semicolon
       })
     });
 
