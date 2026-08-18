@@ -27,6 +27,8 @@ exports.handler = async function (event) {
     const format = formData.format || "";
     const topics = formData.topics || [];
 
+    console.log("Topics: " + topics);
+
     const sf_api_path =
     `${sf_instance_url}/services/data/${sf_api_version}/sobjects/Media__c/`;
 
