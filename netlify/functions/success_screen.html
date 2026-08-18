@@ -12,8 +12,14 @@
       <br><br>
       It's now available in <a href="{{SF_LINK}}" target="_blank" rel="noopener noreferrer">Salesforce</a>, where you can add more details and/or view the rest of our media database.
       <br><br>
-      You can close this window.
+      This window will close automatically in 5 seconds.
     </p>
   </main>
+  <script>
+    // Close the window after a short delay
+    setTimeout(() => {
+      window.close();
+    }, 5000); 
+  </script>
 </body>
 </html>
