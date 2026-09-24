@@ -21,7 +21,7 @@ exports.handler = async function (event) {
     const link_to_article = formData.link_to_article || "";
     const submitted_by = formData.submitted_by || "";
     const notes = formData.notes || "";
-    const is_share_related = formData.is_share_related === "true";
+    const is_share_related = formData.is_share_related == true;
     const share_spokesperson = formData.share_spokesperson || "";
     const channel = formData.channel || "";
     const format = formData.format || "";
