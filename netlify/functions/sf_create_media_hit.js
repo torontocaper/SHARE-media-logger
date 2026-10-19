@@ -9,11 +9,8 @@ exports.handler = async function (event) {
   console.log("Received event:", event);
   
   try {
-    
     const sf_access_token = await authenticate_salesforce();
-    
     const formData = querystring.parse(event.body);
-
     const article_name = formData.article_name || "";
     const publisher = formData.publisher || "";
     const author = formData.author || "";
