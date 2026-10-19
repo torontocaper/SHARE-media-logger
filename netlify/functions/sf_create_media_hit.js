@@ -18,6 +18,7 @@ exports.handler = async function (event) {
     const link_to_article = formData.link_to_article || "";
     const submitted_by = formData.submitted_by || "";
     const notes = formData.notes || "";
+    console.log("formData.is_share_related: " + formData.is_share_related);
     const is_share_related = formData.is_share_related == "true" ? true : false;
     console.log("is_share_related: " + is_share_related);
     const share_spokesperson = formData.share_spokesperson || "";
